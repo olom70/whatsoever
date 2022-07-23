@@ -13,8 +13,9 @@ name = []
 parent = []
 level = []
 textinfo = []
+label = []
 
-parent, name, size, level, textinfo = feedList()
+parent, name, size, level, textinfo, label = feedList()
 
 
 df = pd.DataFrame() 
@@ -22,7 +23,8 @@ df['parent'] = parent
 df['name'] = name 
 #df['value']= size 
 df['level'] = level
-#df['textinfo'] = textinfo
+df['hovertext'] = textinfo
+df['label'] = label
 
 
 app = Dash(__name__)
@@ -47,10 +49,12 @@ def update_figure(sliderVal):
 
     fig = go.Figure()
     fig.add_trace(go.Treemap(
-        labels = df[df['level']<=sliderVal]['name'],
+        ids = df[df['level']<=sliderVal]['name'],
+        labels = df[df['level']<=sliderVal]['label'],
+        #text=df[df['level']<=sliderVal]['label'],
         #values = df[df['level']<=sliderVal]['value'],
         parents = df[df['level']<=sliderVal]['parent'],
- #       textinfo=df[df['level']<=sliderVal]['textinfo']
+        hovertext=df[df['level']<=sliderVal]['hovertext']
     ))
     fig.update_traces(root_color="#f1f1f1")
     fig.update_layout(width = 900, height = 900)

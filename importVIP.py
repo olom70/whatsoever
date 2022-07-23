@@ -36,6 +36,7 @@ def feedList() -> tuple:
     parent = []
     level = []
     textinfo = []
+    label = []
 
 
     try:
@@ -119,8 +120,8 @@ def feedList() -> tuple:
                     name.append(Level1ID) 
                     parent.append('VIP')
                     size.append(1)
-                    textinfo.append(Name)
-
+                    textinfo.append(None)
+                    label.append(Name)
 
                 
                 #Level2 ###############################################################
@@ -141,7 +142,8 @@ def feedList() -> tuple:
                     name.append(Level2ID) 
                     parent.append(Level1ID)
                     size.append(1)
-                    textinfo.append(Name)
+                    textinfo.append(None)
+                    label.append(Name)
 
 
                 #Level 3 ##############################################################
@@ -177,12 +179,14 @@ def feedList() -> tuple:
                     name.append(Level3ID) 
                     parent.append(Level2ID)
                     size.append(1)
-                    textinfo.append(Name)
+                    textinfo.append(Doc1)
+                    label.append(Name)
 
     level.append(0) 
     name.append('VIP') 
     parent.append("")
     size.append(len(level))
     textinfo.append('VIP')
+    label.append('VIP')
 
-    return parent, name, size, level, textinfo
+    return parent, name, size, level, textinfo, label
