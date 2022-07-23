@@ -1,10 +1,7 @@
 import pylightxl as xl
 import platform
-import lib.csvutil as csvutil
 import lib.stringutil as stringutil
 import os
-import time
-import pyyed
 
 def feedList() -> tuple:
 
@@ -14,22 +11,7 @@ def feedList() -> tuple:
         MAIN_FOLDER ="C:/Users/MOREAUCL/Documents/importVIPHierarchy"
 
     IMPORTED_FILE = 'VIP - Exigences - Offre Outil Cible.xlsx'
-    YEDFILE = 'VIP.graphml'
     INPUT = MAIN_FOLDER + os.path.sep + IMPORTED_FILE
-    ELEMENTTYPE = 'Grouping'
-    RELATIONTYPE = 'CompositionRelationship'
-    KEY = 'import'
-    VALUE = 'VIP'
-    L1FONTSTYLE = "bold"
-    L1FONTSIZE = "14"
-    L2FONTSTYLE = "plain"
-    L2FONTSIZE = "13"
-    L3FONTSTYLE = "plain"
-    L3FONTSIZE = "12"
-    WIDTH='200'
-    L1COLOR="#DE1FF2"
-    L2COLOR="#07F2B8"
-    L3COLOR="#F2BE1F"
 
     size = []
     ids = []
