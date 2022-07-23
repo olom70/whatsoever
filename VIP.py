@@ -9,18 +9,18 @@ import plotly.express as px
 from importVIP import feedList
 
 size = []
-name = []
+ids = []
 parent = []
 level = []
 textinfo = []
 label = []
 
-parent, name, size, level, textinfo, label = feedList()
+parent, ids, size, level, textinfo, label = feedList()
 
 
 df = pd.DataFrame() 
 df['parent'] = parent 
-df['name'] = name 
+df['ids'] = ids 
 #df['value']= size 
 df['level'] = level
 df['hovertext'] = textinfo
@@ -49,9 +49,8 @@ def update_figure(sliderVal):
 
     fig = go.Figure()
     fig.add_trace(go.Treemap(
-        ids = df[df['level']<=sliderVal]['name'],
+        ids = df[df['level']<=sliderVal]['ids'],
         labels = df[df['level']<=sliderVal]['label'],
-        #text=df[df['level']<=sliderVal]['label'],
         #values = df[df['level']<=sliderVal]['value'],
         parents = df[df['level']<=sliderVal]['parent'],
         hovertext=df[df['level']<=sliderVal]['hovertext']

@@ -32,7 +32,7 @@ def feedList() -> tuple:
     L3COLOR="#F2BE1F"
 
     size = []
-    name = []
+    ids = []
     parent = []
     level = []
     textinfo = []
@@ -117,7 +117,7 @@ def feedList() -> tuple:
                     Documentation = ''
 
                     level.append(1) 
-                    name.append(Level1ID) 
+                    ids.append(Level1ID) 
                     parent.append('VIP')
                     size.append(1)
                     textinfo.append(None)
@@ -139,7 +139,7 @@ def feedList() -> tuple:
                     Documentation = ''
 
                     level.append(2) 
-                    name.append(Level2ID) 
+                    ids.append(Level2ID) 
                     parent.append(Level1ID)
                     size.append(1)
                     textinfo.append(None)
@@ -176,17 +176,17 @@ def feedList() -> tuple:
                                                         False)
                 
                     level.append(3) 
-                    name.append(Level3ID) 
+                    ids.append(Level3ID) 
                     parent.append(Level2ID)
                     size.append(1)
                     textinfo.append(Doc1)
                     label.append(Name)
 
     level.append(0) 
-    name.append('VIP') 
+    ids.append('VIP') 
     parent.append("")
     size.append(len(level))
     textinfo.append('VIP')
     label.append('VIP')
 
-    return parent, name, size, level, textinfo, label
+    return parent, ids, size, level, textinfo, label
