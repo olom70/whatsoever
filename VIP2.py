@@ -1,11 +1,5 @@
-import json
-from anytree import PostOrderIter
-from anytree.importer import DictImporter
-import ipywidgets as widgets
 import plotly.graph_objs as go
 import pandas as pd
-from dash import Dash, html, dcc, Input, Output
-import plotly.express as px
 from importVIP import feedList
 
 app = Dash(__name__)
