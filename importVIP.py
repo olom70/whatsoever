@@ -6,7 +6,7 @@ import os
 def feedList() -> tuple:
 
     if (platform.system() == 'Linux'):
-        MAIN_FOLDER = "/home/olom/importVIPHierarchy"
+        MAIN_FOLDER = "/Users/CLAUDE/Documents/importVIPHierarchy"
     else:
         MAIN_FOLDER ="C:/Users/MOREAUCL/Documents/importVIPHierarchy"
 
