@@ -128,3 +128,4 @@ dmypy.json
 .pyre/
 .vscode/launch.json
 .gitignore
+get-pip.py
